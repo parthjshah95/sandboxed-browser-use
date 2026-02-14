@@ -65,6 +65,8 @@ Install the hourly cron job to kill containers that exceed the 1-hour limit:
 ├── container/
 │   ├── Dockerfile              # Browser agent container image
 │   └── entrypoint.py           # Agent entrypoint (reads task, runs browser-use, writes result)
+├── docs/
+│   └── whitepaper.md           # Security whitepaper — threat model, LLM key strategies, trust model
 └── scripts/
     ├── build.sh                # Build the Docker image
     ├── browser-task.sh         # Orchestrator CLI (run/status/result/cleanup/list)
@@ -218,3 +220,7 @@ The agent supports three LLM providers. Set the appropriate environment variable
 | OpenAI | `OPENAI_API_KEY` | gpt-4.1-mini |
 
 Priority order: Anthropic > Gemini > OpenAI (first available key is used).
+
+## Further Reading
+
+See [docs/whitepaper.md](docs/whitepaper.md) for a detailed security whitepaper covering the threat model, LLM API key protection strategies (spending caps, egress filtering, temporary credentials, LLM proxies, key rotation), resource considerations, and the result trust model.
