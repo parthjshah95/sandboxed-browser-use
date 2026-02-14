@@ -1,0 +1,6 @@
+# Ignore everything except what's needed for the build
+.git
+*.md
+__pycache__
+*.pyc
+.pytest_cache
